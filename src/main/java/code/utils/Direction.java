@@ -1,4 +1,4 @@
-package usantatecla.utils;
+package main.java.code.utils;
 
 public enum Direction {
 

@@ -1,4 +1,4 @@
-package usantatecla.utils;
+package main.java.code.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

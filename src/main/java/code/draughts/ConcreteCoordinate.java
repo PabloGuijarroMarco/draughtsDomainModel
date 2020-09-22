@@ -39,6 +39,14 @@ class ConcreteCoordinate extends main.java.code.utils.Coordinate implements Coor
 		return Direction.NULL_DIRECTION;
 	}
 
+	public int getRow(){
+		return this.row;
+	}
+
+	public int getColumn(){
+		return this.column;
+	}
+
 	public boolean inInverseDiagonal() {
 		return this.row + this.column == Coordinate.DIMENSION - 1;
 	}

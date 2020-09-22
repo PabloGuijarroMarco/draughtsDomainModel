@@ -8,6 +8,7 @@ enum Error {
 	NOT_OWNER("There is not a token of yours"),
 	SAME_COORDINATES("The origin and target squares are the same"),
 	WRONG_COORDINATES("The coordinates are wrong"),
+	MOVE_NOT_DIAGONAL("The origin and target coordinates aren't in diagonal"),
 	NULL_ERROR;
 
 	private String message;

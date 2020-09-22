@@ -64,6 +64,9 @@ abstract class Player {
 		if (!this.board.isEmpty(targetCoordinate)) {
 			error = Error.NOT_EMPTY;
 		}
+		if (this.board.isInDiagonal(originCoordinate, targetCoordinate)!=0){
+			error = Error.MOVE_NOT_DIAGONAL;
+		}
 		return error;
 	}
 

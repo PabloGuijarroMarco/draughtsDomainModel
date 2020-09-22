@@ -76,7 +76,7 @@ public class Board {
         assert token != null && !token.equals(Token.NULL_TOKEN);
 
         Coordinate[] coordinates = this.coordinates[token.ordinal()];
-        System.out.println(coordinates[0]);
+        System.out.println(coordinates.length);
         int i = 0;
         while (!coordinates[i].isNull()) {
             i++;
@@ -90,6 +90,7 @@ public class Board {
         assert targetCoordinate != null;
         assert !targetCoordinate.isNull();
 
+
         Token token = this.getToken(originCoordinate);
         this.remove(originCoordinate);
         this.put(targetCoordinate, token);
@@ -100,12 +101,17 @@ public class Board {
         assert !coordinate.isNull();
 
         for (int i = 0; i < this.NUMBER_PLAYERS; i++) {
-            for (int j = 0; j < Coordinate.DIMENSION; j++) {
+            for (int j = 0; j < Coordinate.PIECES; j++) {
                 if (this.coordinates[i][j].equals(coordinate)) {
                     this.coordinates[i][j] = NullCoordinate.instance();
                 }
             }
         }
+    }
+
+    public int isInDiagonal(Coordinate originCoordinate, Coordinate targetCoordinate){
+        return Math.abs(originCoordinate.getColumn()-targetCoordinate.getColumn())-
+                Math.abs(originCoordinate.getRow()-targetCoordinate.getRow());
     }
 
     boolean isOccupied(Coordinate coordinate, Token token) {
